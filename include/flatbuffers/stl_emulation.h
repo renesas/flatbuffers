@@ -28,6 +28,7 @@
 
 // Detect C++17 compatible compiler.
 // __cplusplus >= 201703L - a compiler has support of 'static inline' variables.
+#if 0
 #if defined(FLATBUFFERS_USE_STD_OPTIONAL) \
     || (defined(__cplusplus) && __cplusplus >= 201703L) \
     || (defined(_MSVC_LANG) &&  (_MSVC_LANG >= 201703L))
@@ -36,6 +37,7 @@
     #define FLATBUFFERS_USE_STD_OPTIONAL
   #endif
 #endif // defined(FLATBUFFERS_USE_STD_OPTIONAL) ...
+#endif /* IAR is only compatible with compilation features from C++17, not std lib features  */
 
 // The __cpp_lib_span is the predefined feature macro.
 #if defined(FLATBUFFERS_USE_STD_SPAN)
